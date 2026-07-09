@@ -1,5 +1,4 @@
 def test_add_item_sends_expected_payload():
-    # UPDATED: Added "BrandName" as the 4th input
     answers = ["123456789012", "3.49", "7", "BrandName"]
     
     sent_payload = {}
@@ -17,7 +16,6 @@ def test_add_item_sends_expected_payload():
     ):
         cli.add_item()
 
-    # UPDATED: Assert that the payload includes the brand
     assert sent_payload["json"] == {
         "barcode": "123456789012",
         "price": 3.49,
