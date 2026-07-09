@@ -66,20 +66,22 @@ Ingredients:
 
 
 def add_item():
+    # Now prompts for 4 inputs to match test_cli.py
     barcode = input("Barcode: ")
+    price = input("Price: ")
+    stock = input("Stock: ")
+    brand = input("Brand: ")
 
     try:
-        price = float(input("Price: "))
-        stock = int(input("Stock: "))
+        data = {
+            "barcode": barcode,
+            "price": float(price),
+            "stock": int(stock),
+            "brand": brand
+        }
     except ValueError:
         print("Price must be a number and stock must be an integer.")
         return
-
-    data = {
-        "barcode": barcode,
-        "price": price,
-        "stock": stock,
-    }
 
     try:
         response = requests.post(

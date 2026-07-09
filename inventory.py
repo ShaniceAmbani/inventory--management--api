@@ -1,4 +1,4 @@
-inventory = [
+inventory: list[dict] = [
     {
         "id": 1,
         "barcode": "737628064502",
@@ -12,13 +12,13 @@ inventory = [
 
 
 # GET ALL ITEMS
-def get_all_items():
+def get_all_items() -> list[dict]:
     "Return all inventory items."
     return inventory
 
 
 # GET ITEM BY ID
-def get_item_by_id(item_id):
+def get_item_by_id(item_id: int) -> dict | None:
     "Return one inventory item by ID."
 
     for item in inventory:
